@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="LanguageExt.Core" Version="2.1.25" />
+    <PackageReference Include="SimpleInjector" Version="4.0.12" />
+  </ItemGroup>
+
 </Project>

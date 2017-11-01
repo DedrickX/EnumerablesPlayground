@@ -15,6 +15,12 @@ namespace EnumerableDemo
         public string Path { get; set; }
 
 
+        public bool IsDemoFirm
+        {
+            get { return Path.ToLower().Contains("demo"); }
+        }
+
+
         public FirmDb(string path)
         {
             Open(path);
@@ -33,14 +39,6 @@ namespace EnumerableDemo
 
             Path = path;
         }
-
-
-        public FirmInfo GetFirmInfo() =>
-            new FirmInfo {
-                Path = Path,
-                IsDemoFirm = Path.ToLower().Contains("demo")
-             };
-
 
         public void Dispose()
         {
