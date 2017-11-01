@@ -8,13 +8,13 @@ namespace EnumerableDemo
     {
         static void Main(string[] args)
         {
-            var repo = new FirmInfoRepository();
+            // var repo = new FirmInfoProvider();
 
-            var result = repo.GetFirmInfos()
-                .Where(x => !x.IsDemoFirm)
-                .HasMoreThan(2);
+            // var result = repo.GetFirmInfos()
+            //     .Where(x => !x.IsDemoFirm)
+            //     .HasMoreThan(2);
 
-            WriteLine($"\n>>>> Result = {result}");
+            // WriteLine($"\n>>>> Result = {result}");
         }
     }
 }

@@ -2,13 +2,13 @@ namespace EnumerableDemo
 {
 
     /// <summary>
-    /// Stručné info o pripojenej firme
+    /// DTO - info o pripojenej firme
     /// </summary>
     public class FirmInfo
     {
 
         /// <summary>
-        /// Príznak že sa jedná o "demo" firmu
+        /// Cesta ku súboru firmy
         /// </summary>
         public string Path { get; set; }
 

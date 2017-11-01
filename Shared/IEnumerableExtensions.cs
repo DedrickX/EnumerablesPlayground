@@ -8,7 +8,7 @@ namespace EnumerableDemo
     {
 
         /// <summary>
-        /// Funkcia overí, či má kolekcia väčší počet položiek.
+        /// Funkcia overí, či má kolekcia väčší počet položiek než zadané číslo.
         /// </summary>
         public static bool HasMoreThan<T>(this IEnumerable<T> items, int count) =>
             items
