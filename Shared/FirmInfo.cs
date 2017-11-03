@@ -13,13 +13,13 @@ namespace EnumerableDemo
         public string Path { get; set; }
 
         /// <summary>
-        /// Príznak že sa jedná o "demo" firmu
+        /// Príznak že sa jedná o ukážkovú "demo" firmu
         /// </summary>
-        public bool IsDemoFirm { get; set; }
+        public bool IsSampleFirm { get; set; }
 
 
         public override string ToString() =>
-            $">> FirmInfo: {Path}, {IsDemoFirm}";
+            $">> FirmInfo: {Path}, {IsSampleFirm}";
 
     }
 }

@@ -7,27 +7,30 @@ namespace EnumerableDemo
 {
 
     /// <summary>
-    /// Firma - veľký objekt ktorý treba disposovať
+    /// Firma - monolytický mega objekt vyžadujúci si imperatívny prístup a ktorý treba po ukončení práce disposovať
     /// </summary>
     public class FirmDb : IDisposable
     {
 
-        public string Path { get; set; }
+        /// <summary>
+        /// Cesta ku firme
+        /// </summary>
+        public string Path { get; private set; }
 
 
-        public bool IsDemoFirm
+        /// <summary>
+        /// Príznak že sa jedná o ukážkovú firmu
+        /// </summary>
+        public bool IsSampleFirm
         {
-            get { return Path.ToLower().Contains("demo"); }
+            get { return Path.ToLower().Contains("sample"); }
         }
 
 
-        public FirmDb(string path)
-        {
-            Open(path);
-        }
-
-
-        private void Open(string path)
+        /// <summary>
+        /// Aktuálna inštancia firmy otvorí databázu na danom umiestnení
+        /// </summary>
+        public void Open(string path)
         {
             WriteLine($"\n>> Opening {path}");
 
@@ -40,6 +43,20 @@ namespace EnumerableDemo
             Path = path;
         }
 
+
+        /// <summary>
+        /// Funkcia vráti DTO FirmInfo
+        /// </summary>
+        public FirmInfo GetFirmInfo() =>
+            new FirmInfo {
+                Path = Path,
+                IsSampleFirm = IsSampleFirm
+            };
+
+
+        /// <summary>
+        /// Dispose inštancie
+        /// </summary>
         public void Dispose()
         {
             WriteLine($">> Disposing {Path}");
